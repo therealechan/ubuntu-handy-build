@@ -13,7 +13,7 @@
 # basic config
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/basic_config.sh`"
 
-# run in local repo
+# clone this repo and do this locally
 $ rake upload_ssh_key
 
 # ssh config
@@ -32,6 +32,10 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 ## Requirements
 
 * ubuntu 12.04 && 14.04
+
+## Todo
+
+* add nginx init script
 
 ## License
 Copyright (c) Edward Chan.
