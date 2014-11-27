@@ -6,6 +6,7 @@
   \____/_.___/\__,_/_/ /_/\__/\__,_/  /_/ /_/\__,_/_/ /_/\__,_/\__, /  /_.___/\__,_/_/_/\__,_/   
                                                               /____/                             
 ```
+Run your Rails Application with Passenger + Nginx + MySQL
 
 ## Usage
 
@@ -25,8 +26,11 @@ sh -c "`curl -fsSL https://github.com/chankaward/ubuntu-handy-build/raw/master/b
 # ruby env
 bash -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/ruby_env.sh`"
 
-# nginx
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx.sh`"
+# install nginx
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx.sh`"
+
+# nginx startup
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx_init.sh`"
 ```
 
 ## Requirements
@@ -35,7 +39,9 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 
 ## Todo
 
-* add nginx init script
+* ~~add nginx init script~~
+* refactor
+* write a better README
 
 ## License
 Copyright (c) Edward Chan.
