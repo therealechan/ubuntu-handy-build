@@ -6,8 +6,6 @@ wget https://gist.githubusercontent.com/chankaward/26f219de40ec42b81ea4/raw/841a
 # Replace nginx
 sudo mv ./nginx /etc/init.d/nginx
 
-cd /etc/init.d/nginx
-
 sudo chmod +x /etc/init.d/nginx
 
 # set startup
