@@ -84,7 +84,7 @@ TRUE=1                                  #boolean
 FALSE=0                                 #boolean
 
 lockfile=/var/lock/subsys/nginx
-NGINX_CONF_FILE="/usr/local/nginx/conf/nginx.conf"
+NGINX_CONF_FILE="/opt/nginx/conf/nginx.conf"
 
 #------------------------------------------------------------------------------
 #                               Simple Tests
