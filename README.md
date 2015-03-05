@@ -43,5 +43,30 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 * refactor
 * write a better README
 
+## Follow-up
+
+##### Update your `nginx.conf` like below
+```
+server {
+    listen       80;
+    server_name  domain.com; #Your site domain
+    rails_env    production; #Rails deploy environment
+    root         /var/www/your_site/current/public; #Rails app pubilc folder path
+    passenger_enabled on;
+
+    # Comment or delete these lines.
+    # location / {
+    #     root   html;
+    #     index  index.html index.htm;
+    # }
+}
+```
+
+##### Authorize application folder to deploy user
+_I usually place the app in `/var/www`_
+```
+$ sudo chown -R deployer:deployer /var/www
+```
+
 ## License
 Copyright (c) Edward Chan.
