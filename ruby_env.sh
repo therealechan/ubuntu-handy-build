@@ -18,3 +18,5 @@ echo
 echo "rvm install 2.0.0"
 echo
 echo "rvm use 2.0.0 --default"
+echo
+echo "gem install bundler"
