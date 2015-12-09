@@ -72,5 +72,18 @@ _I usually place the app in `/var/www`_
 $ sudo chown -R deployer:deployer /var/www
 ```
 
+#### Create User and Database for pg
+```
+$ sudo su - postgres // Switch to postgres user
+$ psql // Sign in postgres background
+```
+
+```
+postgres=# \password postgres // Setup password for postgres user
+postgres=# CREATE USER deployer WITH PASSWORD 'password'; // Create a database user for Linux user
+postgres=# CREATE DATABASE exampledb OWNER deployer; // Create database
+postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to deployer; // Authorize deployer user
+```
+
 ## License
 Copyright (c) Edward Chan.
