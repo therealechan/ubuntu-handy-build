@@ -26,6 +26,10 @@ sh -c "`curl -fsSL https://github.com/chankaward/ubuntu-handy-build/raw/master/b
 # ruby env
 bash -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/ruby_env.sh`"
 
+# Database
+mysql: sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_mysql.sh`"
+psql : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_psql.sh`"
+
 # install nginx
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx.sh`"
 
