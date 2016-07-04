@@ -1,9 +1,9 @@
 ```
-  _ __                      _ __                     ___              
+  _ __                      _ __                     ___
  /// //7      _    /7      /// / _   _     _//_ __  / o.)     ()/7 _//
-/ U //o\ /7/7/ \/7/_7/7/7 / ` /,'o| / \/7,'o/ \V / / o \ /7/7/7//,'o/ 
-\_,'/_,'/__//_n_/// /__/ /_n_/ |_,7/_n_/|__/   )/ /___,'/__/////|__/  
-                                              //                      
+/ U //o\ /7/7/ \/7/_7/7/7 / ` /,'o| / \/7,'o/ \V / / o \ /7/7/7//,'o/
+\_,'/_,'/__//_n_/// /__/ /_n_/ |_,7/_n_/|__/   )/ /___,'/__/////|__/
+                                              //
 ```
 
 Run your Rails Application with Passenger + Nginx + MySQL
@@ -35,11 +35,27 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 
 # nginx startup
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx_init.sh`"
+
+# for git conf
+echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf`" > ~/.gitconfig
+
+# for bash conf
+echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/bash_custom.conf`" > ~/.custom_config
+
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.custom_config ]; then
+    source ~/.custom_config
+fi
+" >> ~/.bashrc
+
+# custom vim
+echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf`" > ~/.vimrc
 ```
 
 ## Requirements
 
-* ubuntu 12.04 && 14.04
+* ubuntu 16.04 && 14.04
 
 ## Todo
 
@@ -81,6 +97,7 @@ $ psql // Sign in postgres background
 ```
 postgres=# \password postgres // Setup password for postgres user
 postgres=# CREATE USER deployer WITH PASSWORD 'password'; // Create a database user for Linux user
+postgres=# ALTER USER deployer WITH CREATEDB'; // Enable create db
 postgres=# CREATE DATABASE exampledb OWNER deployer; // Create database
 postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to deployer; // Authorize deployer user
 ```
