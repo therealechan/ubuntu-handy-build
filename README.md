@@ -6,7 +6,7 @@
                                               //
 ```
 
-Run your Rails Application with Passenger + Nginx + MySQL
+Run your Rails Application On Ubuntu
 
 ## Usage
 
@@ -29,9 +29,10 @@ bash -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-b
 # Database
 mysql: sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_mysql.sh`"
 psql : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_psql.sh`"
+pg-9.5 : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_pg_9.5.sh`"
 
-# install nginx
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx.sh`"
+# install nginx with passenger
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx_with_passenger.sh`"
 
 # nginx startup
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx_init.sh`"
