@@ -69,7 +69,7 @@ server {
 ##### Authorize application folder to deploy user
 _I usually place the app in `/var/www`_
 ```
-$ sudo chown -R deployer:deployer /var/www
+$ sudo chown -R $(whoami):$(whoami) /var/www
 ```
 
 #### Create User and Database for pg
