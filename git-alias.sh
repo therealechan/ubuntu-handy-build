@@ -1,1 +1,120 @@
-/Users/david/.git-alias.sh
+
+
+alias 'gs'='git status'
+alias 'gb'='git branch'
+alias 'gbr'='git branch -r'
+alias 'gp'='git push'
+alias 'gpu'='git push -u'
+alias 'gpull'='git pull'
+alias 'gpo'='git pull origin'
+alias 'gpm'='git pull origin master'
+alias 'ga'='git add . -p'
+alias 'gi'='git commit -v'
+alias 'gbd'='git branch -d'
+alias 'gbD'='git branch -D'
+alias 'gkb'='git checkout -b'
+alias 'git-remotes'='git remote -v'
+alias 'git-reset-soft'='git reset --soft'
+alias 'git-reset-hard'='git reset --hard'
+alias 'git-reset-soft-head'='git reset --soft HEAD'
+alias 'git-reset-hard-head'='git reset --soft HEAD'
+alias 'git-stash'='git stash'
+alias 'git-stash-list'='git stash list'
+alias 'git-stash-apply'='git stash apply'
+alias 'git-stash-pop'='git stash pop'
+alias 'git-stash-clear'='git stash clear'
+alias 'git-stash-drop'='git stash drop'
+alias 'git-fetch-prune'='git fetch --prune'
+alias 'git-clone'='git clone'
+alias 'git-develop-update'='git checkout develop && git pull origin develop'
+alias 'git-master-update'='git checkout master && git pull origin master'
+alias 'git-delete-merged-branches'='git branch --merged | grep -v "\*" | grep -v "master"| grep -v "develop" | xargs -n 1 git branch -d'
+alias 'git-delete-all-branches'='git branch | grep -v "\*" | grep -v "master"| grep -v "develop" | xargs -n 1 git branch -D'
+
+alias 'git-upstream-update'='git checkout upstream_master && git pull upstream master && git co master && git merge upstream_master && git-delete-merged-branches'
+alias 'one-master-task-ended'='git-stash && git-master-update && git-delete-merged-branches && git-stash-pop && cpd'
+alias 'one-staging-task-ended'='git-develop-update && git-delete-merged-branches && cap-sd'
+alias 'one-prod-task-ended'='git-master-update && git-delete-merged-branches && cap-pd'
+alias 'one-remote-task-ended'='git-upstream-update && git co master && git merge upstream_master && git-delete-merged-branches'
+
+alias 'git-co-develop'='git-stash && git co develop && git-stash-pop'
+alias 'git-co-master'='git-stash && git co master && git-stash-pop'
+alias 'git-develop-update-stash'='git-stash && git-develop-update && git-stash-pop'
+alias 'git-master-update-stash'='git-stash && git-master-update && git-stash-pop'
+
+function git-fetch-remote { git fetch origin :$1; git co $1; gpo $1;  }
+
+function git-delete-remote-merged-branches {
+  git branch -r --merged | grep -v "master"| grep -v "develop" > __tmp__
+
+  for line in `cat __tmp__`; do
+    echo "delete branch ${line#*/}\n";
+    git push ${line%%/*} --delete ${line#*/};
+  done
+
+  rm -rf __tmp__
+}
+
+function String.parameterize (){
+  ruby -e "require 'active_support/core_ext/string'; puts '$1'.parameterize;"
+}
+
+function git-new-branch {
+  git checkout develop
+  String.parameterize "$1" > __tmp__
+  cat __tmp__ |xargs -L1 git checkout -b
+  rm __tmp__
+}
+
+function git-checkout-remote { git checkout -b $1 origin/$1; };
+
+# Git branch in prompt.
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# change PS1 like 'david octopress (master) $'
+# export PS1="\u@\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $"
+
+# open gitlab page for current repo
+function gitlab-open {
+  gitlab_repo_url=`git ls-remote --get-url` # git@git.example.com:repo-name.git
+  gitlab_user=`echo $gitlab_repo_url|cut -d @ -f 1`
+  gitlab_host=`echo $gitlab_repo_url|cut -d : -f 1|cut -d @ -f 2`
+  gitlab_repo=`echo $gitlab_repo_url|cut -d : -f 2|cut -d . -f 1`
+  gitlab_web_url="http://${gitlab_host}/${gitlab_repo}"
+  open $gitlab_web_url
+}
+
+# use current branch to send pull request on gitlab website
+# will open url like:
+#   # http://gitlab.exapmle.com/repo-name/merge_requests/new?merge_request[source_branch]=current_branch&merge_request[target_branch]=develop&merge_request[title]=title"
+# example for using develop as base branch: $ gitlab-send-merge-request develop
+function gitlab-send-merge-request {
+  default_target_branch="master"
+  target_branch=$1
+  # use default_target_branch for target_branch
+  if [[ $target_branch == "" ]]; then
+    target_branch=$default_target_branch
+  fi
+
+  gitlab_repo_url=`git ls-remote --get-url` # git@git.example.com:repo-name.git
+  gitlab_user=`echo $gitlab_repo_url|cut -d @ -f 1`
+  gitlab_host=`echo $gitlab_repo_url|cut -d : -f 1|cut -d @ -f 2`
+  gitlab_repo=`echo $gitlab_repo_url|cut -d : -f 2|cut -d . -f 1`
+  gitlab_web_url="http://${gitlab_host}/${gitlab_repo}"
+
+  current_branch=`git rev-parse --abbrev-ref HEAD`
+
+  # String.titleize(){
+  #   echo "$1" | sed -E -e "s/-|_/ /g" -e 's/\b(.)/\U\1/g'
+  # }
+  # gitlab_mr_title=`String.titleize $current_branch`
+
+  git_last_commit_message=`git log -1 --pretty=%B`
+  gitlab_mr_title=$git_last_commit_message
+
+  gitlab_mr_url="${gitlab_web_url}/merge_requests/new?merge_request[source_branch]=${current_branch}&merge_request[target_branch]=${target_branch}&merge_request[title]=${gitlab_mr_title}"
+  open "$gitlab_mr_url"
+}
+alias gitlab-send-merge-request-to-develop='gitlab-send-merge-request develop'
