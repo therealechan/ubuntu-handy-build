@@ -1,5 +1,3 @@
-
-
 alias 'gs'='git status'
 alias 'gb'='git branch'
 alias 'gbr'='git branch -r'
