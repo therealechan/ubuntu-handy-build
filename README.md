@@ -98,7 +98,7 @@ $ psql // Sign in postgres background
 ```
 postgres=# \password postgres // Setup password for postgres user
 postgres=# CREATE USER deployer WITH PASSWORD 'password'; // Create a database user for Linux user
-postgres=# ALTER USER deployer WITH CREATEDB'; // Enable create db
+postgres=# ALTER USER deployer WITH CREATEDB; // Enable create db
 postgres=# CREATE DATABASE exampledb OWNER deployer; // Create database
 postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to deployer; // Authorize deployer user
 ```
