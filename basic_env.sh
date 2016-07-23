@@ -22,3 +22,6 @@ sudo apt-get install curl
 
 # install imagemagick
 sudo apt-get install -y imagemagick
+
+# tmux
+sudo apt-get install -y tmux
