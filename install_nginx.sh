@@ -1,9 +1,9 @@
-#!/bin/sh
+# https://raw.githubusercontent.com/huacnlee/init.d/master/install_nginx
 
-# Install PCRE library
-# Otherwise we can't use regex to config nginx like: `location ~ ^/(assets)/`
-sudo apt-get install libpcre3 libpcre3-dev
-
-# through passenger to install nginx
-gem install passenger –no-ri –no-rdoc
-rvmsudo passenger-install-nginx-module
+curl -O http://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key
+sudo bash -c 'echo "deb http://nginx.org/packages/ubuntu/ $(lsb_release -cs) nginx
+deb-src http://nginx.org/packages/ubuntu/ $(lsb_release -cs) nginx" > /etc/apt/sources.list.d/nginx-stable.list'
+sudo apt-get update
+sudo apt-get install -y nginx
+nginx -v
