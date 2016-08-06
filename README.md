@@ -10,6 +10,12 @@ Run your Rails Application with Passenger + Nginx + MySQL
 
 ## Usage
 
+Make sure you have install curl before you start...
+
+```sh
+$ apt-get install curl
+```
+
 ```sh
 # basic config
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/basic_config.sh`"
@@ -39,7 +45,7 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 
 ## Requirements
 
-* ubuntu 12.04 && 14.04
+* ubuntu 12.04 && 14.04 (currently not support 16.04)
 
 ## Todo
 
