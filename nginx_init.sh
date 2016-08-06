@@ -11,5 +11,5 @@ sudo chmod +x /etc/init.d/nginx
 # set startup
 sudo update-rc.d nginx defaults
 
-# restart nginx
-sudo service nginx restart
+# start nginx
+sudo service nginx start
