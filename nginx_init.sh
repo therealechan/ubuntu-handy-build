@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Download nginx-init-ubuntu
-wget https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx
+wget https://raw.githubusercontent.com/therealechan/ubuntu-handy-build/master/nginx
 
 # Replace nginx
 sudo mv ./nginx /etc/init.d/nginx
