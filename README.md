@@ -33,8 +33,11 @@ sh -c "`curl -fsSL https://github.com/chankaward/ubuntu-handy-build/raw/master/b
 bash -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/ruby_env.sh`"
 
 # Database
-mysql: sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_mysql.sh`"
-psql : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_psql.sh`"
+## MySQL
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_mysql.sh`"
+
+## PostgreSQL
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_psql.sh`"
 
 # install nginx
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx.sh`"
