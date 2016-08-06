@@ -6,7 +6,7 @@
                                               //                      
 ```
 
-Run your Rails Application with Passenger + Nginx + MySQL
+Run your Rails Application with Passenger + Nginx + MySQL or PostgreSQL
 
 ## Usage
 
