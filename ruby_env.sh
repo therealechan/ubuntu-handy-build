@@ -10,7 +10,7 @@ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"' >> ~/.bas
 echo "================================================================="
 echo "================================================================="
 echo
-echo "===Please run following command to finish install rvm and ruby==="
+echo "== Please run following command to finish install rvm and ruby =="
 echo "============================ Start =============================="
 echo
 echo "Run $ source ~/.bashrc"
