@@ -58,7 +58,7 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 
 ## Follow-up
 
-##### Update your `nginx.conf` like below
+##### Update your `/opt/nginx/conf/nginx.conf` be like
 ```
 server {
     listen       80;
