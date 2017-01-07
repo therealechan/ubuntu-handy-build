@@ -37,8 +37,6 @@ sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-bui
 # nginx startup
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx_init.sh`"
 
-# for git conf
-echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf`" > ~/.gitconfig
 
 # for bash conf
 echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/bash_custom.conf`" > ~/.custom_config
@@ -48,10 +46,13 @@ echo "
 if [ -f ~/.custom_config ]; then
     source ~/.custom_config
 fi
-" >> ~/.bashrc
+" >> ~/.zshrc
 
 # custom vim
-echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf`" > ~/.vimrc
+`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf -o ~/.vimrc`
+
+# for git conf
+echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf`" > ~/.gitconfig
 ```
 
 ## Requirements
