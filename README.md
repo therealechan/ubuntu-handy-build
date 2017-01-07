@@ -52,7 +52,18 @@ fi
 `curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf -o ~/.vimrc`
 
 # for git conf
-echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf`" > ~/.gitconfig
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf -o ~/.gitconfig
+
+# for git conf
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git-alias.sh -o ~/.git-alias
+
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.git-alias ]; then
+    source ~/.git-alias
+fi
+" >> ~/.zshrc
+
 ```
 
 ## Requirements
@@ -99,7 +110,7 @@ $ psql // Sign in postgres background
 ```
 postgres=# \password postgres // Setup password for postgres user
 postgres=# CREATE USER deployer WITH PASSWORD 'password'; // Create a database user for Linux user
-postgres=# ALTER USER deployer WITH CREATEDB; // Enable create db
+postgres=# ALTER USER deployer WITH CREATEDB'; // Enable create db
 postgres=# CREATE DATABASE exampledb OWNER deployer; // Create database
 postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to deployer; // Authorize deployer user
 ```
