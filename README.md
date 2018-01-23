@@ -50,6 +50,15 @@ if [ -f ~/.custom_config ]; then
 fi
 " >> ~/.bashrc
 
+# for tmux
+echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf`" > ~/.tmux.conf
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.tmux.conf ]; then
+    source ~/.tmux.conf
+fi
+" >> ~/.bashrc
+
 # custom vim
 echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf`" > ~/.vimrc
 ```
