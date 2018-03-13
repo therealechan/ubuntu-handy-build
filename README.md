@@ -6,60 +6,38 @@
                                               //
 ```
 
-Run your Rails Application On Ubuntu
+Basic Config On Ubuntu 16.04
 
-## Usage
+### install `oh-my-zsh`
 
-```sh
-# basic config
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/basic_config.sh`"
+```
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sed -i 's/ZSH_THEME="sammy"/ZSH_THEME="ys"/' ~/.zshrc
+sudo chsh -s /bin/zsh
+```
 
-# clone this repo and do this locally
-$ rake upload_ssh_key
+### tmux conf
 
-# ssh config
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/ssh_config.sh`"
-
-# basic env
-sh -c "`curl -fsSL https://github.com/chankaward/ubuntu-handy-build/raw/master/basic_env.sh`"
-
-# ruby env
-bash -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/ruby_env.sh`"
-
-# Database
-mysql: sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_mysql.sh`"
-psql : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_psql.sh`"
-pg-9.5 : sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_pg_9.5.sh`"
-
-# install nginx with passenger
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/install_nginx_with_passenger.sh`"
-
-# nginx startup
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/ubuntu-handy-build/master/nginx_init.sh`"
-
-
-# for bash conf
-echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/bash_custom.conf`" > ~/.custom_config
-
-echo "
-# load custom bash alias and configure for current user
-if [ -f ~/.custom_config ]; then
-    source ~/.custom_config
-fi
-" >> ~/.zshrc
-
-# for tmux
+load custom bash alias and configure for current user
+```
 echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf`" > ~/.tmux.conf
 echo "
-# load custom bash alias and configure for current user
 if [ -f ~/.tmux.conf ]; then
     source ~/.tmux.conf
 fi
 " >> ~/.bashrc
+```
 
-# custom vim
+### vim conf
+
+custom vimrc
 `curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf -o ~/.vimrc`
 
+
+### git config
+
+```
 # for git conf
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf -o ~/.gitconfig
 
@@ -72,57 +50,4 @@ if [ -f ~/.git-alias ]; then
     source ~/.git-alias
 fi
 " >> ~/.zshrc
-
 ```
-
-## Requirements
-
-* ubuntu 16.04 && 14.04
-
-## Todo
-
-* ~~add nginx init script~~
-* refactor
-* write a better README
-
-## Follow-up
-
-##### Update your `nginx.conf` like below
-```
-server {
-    listen       80;
-    server_name  domain.com; #Your site domain
-    rails_env    production; #Rails deploy environment
-    root         /var/www/your_site/current/public; #Rails app pubilc folder path
-    passenger_enabled on;
-
-    # Comment or delete these lines.
-    # location / {
-    #     root   html;
-    #     index  index.html index.htm;
-    # }
-}
-```
-
-##### Authorize application folder to deploy user
-_I usually place the app in `/var/www`_
-```
-$ sudo chown -R deployer:deployer /var/www
-```
-
-#### Create User and Database for pg
-```
-$ sudo su - postgres // Switch to postgres user
-$ psql // Sign in postgres background
-```
-
-```
-postgres=# \password postgres // Setup password for postgres user
-postgres=# CREATE USER deployer WITH PASSWORD 'password'; // Create a database user for Linux user
-postgres=# ALTER USER deployer WITH CREATEDB'; // Enable create db
-postgres=# CREATE DATABASE exampledb OWNER deployer; // Create database
-postgres=# GRANT ALL PRIVILEGES ON DATABASE exampledb to deployer; // Authorize deployer user
-```
-
-## License
-Copyright (c) Edward Chan.
