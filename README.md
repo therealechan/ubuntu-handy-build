@@ -6,7 +6,7 @@
                                               //
 ```
 
-Basic Config On Ubuntu 16.04
+# Basic Config On Ubuntu 16.04 #
 
 ### install `oh-my-zsh`
 
@@ -18,6 +18,9 @@ sudo chsh -s /bin/zsh
 ```
 
 ### tmux conf
+
+install latest tmux
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux_latest_install.sh)"`
 
 load custom bash alias and configure for current user
 ```
