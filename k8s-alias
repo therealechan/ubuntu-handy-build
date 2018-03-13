@@ -1,0 +1,32 @@
+### docker/k8s alias
+
+alias docker-rm-all-cotainer="docker ps -a | awk '{print $1}' | grep -v CONTAINER | xargs docker rm"
+
+# 执行 eval $(minikube docker-env)，即设置 minikube 虚拟机的 docker 环境变量即可。
+alias eval-minikube-docker-env='eval $(minikube docker-env)'
+
+alias kube-restart='sudo systemctl restart kubelet.service'
+alias kube-status='sudo systemctl status kubelet.service'
+alias kube-restart='sudo systemctl restart kubelet.service'
+
+alias kube-get-no='kubectl get nodes'
+alias kube-get-no-sys='kubectl get nodes -n kube-system'
+alias kube-get-no-all='kubectl get nodes --all-namespaces'
+alias kube-get-svc='kubectl get svc'
+alias kube-get-svc-sys='kubectl get svc -n kube-system'
+alias kube-get-svc-all='kubectl get svc --all-namespaces'
+
+alias kube-get-deploy='kubectl get deployments'
+alias kube-get-ep='kubectl get endpoints'
+alias kube-get-ns='kubectl get namespaces'
+alias kube-get-sc='kubectl get sc'
+alias kube-get-sts='kubectl get sts'
+
+alias kube-desc='kubectl describe'
+alias kube-desc-pod='kubectl describe pod'
+alias kube-desc-sys='kubectl describe --namespace=kube-system'
+
+alias kube-exec='kubectl exec -it'
+alias kube-create-file='kubectl create -f'
+alias kube-del-file='kubectl delete -f'
+

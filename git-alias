@@ -26,6 +26,7 @@ alias 'git-fetch-prune'='git fetch --prune'
 alias 'git-clone'='git clone'
 alias 'git-develop-update'='git checkout develop && git pull origin develop'
 alias 'git-master-update'='git checkout master && git pull origin master'
+alias 'git-master-update-tags'='git checkout master && git pull origin master --tags'
 alias 'git-delete-merged-branches'='git branch --merged | grep -v "\*" | grep -v "master"| grep -v "develop" | xargs -n 1 git branch -d'
 alias 'git-delete-all-branches'='git branch | grep -v "\*" | grep -v "master"| grep -v "develop" | xargs -n 1 git branch -D'
 

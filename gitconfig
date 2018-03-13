@@ -1,6 +1,6 @@
 [user]
-        name = your_name
-        email = your_email
+        name = david
+        email = lexuszhi1990@gmail.com
 [alias]
         ci = commit
         st = status
@@ -34,10 +34,20 @@
 [push]
         default = current
 [core]
-	excludesfile = ~/.gitignore_global
-        editor = vi
+	excludesfile = /Users/david/.gitignore_global
+        editor = vim
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

@@ -29,28 +29,54 @@ echo "
 if [ -f ~/.tmux.conf ]; then
     source ~/.tmux.conf
 fi
-" >> ~/.bashrc
+" >> ~/.zshrc
 ```
 
 ### vim conf
 
 custom vimrc
-`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vim.conf -o ~/.vimrc`
+`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vimrc -o ~/.vimrc`
 
 
 ### git config
 
 ```
 # for git conf
-curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git.conf -o ~/.gitconfig
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/gitconf -o ~/.gitconfig
 
 # for git conf
-curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git-alias.sh -o ~/.git-alias
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git-alias -o ~/.git-alias
 
 echo "
 # load custom bash alias and configure for current user
 if [ -f ~/.git-alias ]; then
     source ~/.git-alias
+fi
+" >> ~/.zshrc
+```
+
+### python alias
+
+```
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/py-alias -o ~/.py-alias
+
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.py-alias ]; then
+    source ~/.py-alias
+fi
+" >> ~/.zshrc
+```
+
+### k8s alias
+
+```
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/k8s-alias -o ~/.k8s-alias
+
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.k8s-alias ]; then
+    source ~/.k8s-alias
 fi
 " >> ~/.zshrc
 ```

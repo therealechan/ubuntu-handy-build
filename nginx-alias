@@ -4,3 +4,10 @@ alias nginx-reopen='sudo /usr/sbin/nginx -s reopen'
 alias nginx-stop='sudo sudo /usr/sbin/nginx -s stop'
 alias nginx-reload='sudo sudo /usr/sbin/nginx -s reload'
 alias nginx-quit='sudo sudo /usr/sbin/nginx -s quit'
+
+# nginx related
+alias tf-nignx-log='tail -f /usr/local/var/log/nginx/access.log'
+alias cd-nginx='cd /usr/local/etc/nginx'
+alias nginx-start='sudo nginx'
+alias nginx-stop='sudo nginx -s stop'
+alias nginx-reload='sudo nginx -s reload'
