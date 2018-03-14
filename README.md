@@ -25,18 +25,11 @@ install latest tmux
 load custom bash alias and configure for current user
 ```
 echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf`" > ~/.tmux.conf
-echo "
-if [ -f ~/.tmux.conf ]; then
-    source ~/.tmux.conf
-fi
-" >> ~/.zshrc
-```
 
 ### vim conf
 
 custom vimrc
 `curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/vimrc -o ~/.vimrc`
-
 
 ### git config
 
