@@ -23,8 +23,7 @@ install latest tmux
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux_latest_install.sh)"`
 
 load custom bash alias and configure for current user
-```
-echo "`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf`" > ~/.tmux.conf
+`curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf -o ~/.tmux.conf`
 
 ### vim conf
 
@@ -35,7 +34,7 @@ custom vimrc
 
 ```
 # for git conf
-curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/gitconf -o ~/.gitconfig
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/gitconfig -o ~/.gitconfig
 
 # for git conf
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git-alias -o ~/.git-alias

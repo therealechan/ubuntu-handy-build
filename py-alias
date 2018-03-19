@@ -1,10 +1,13 @@
 # ipython notebook
 alias py='python'
+alias py3.6='python3.6'
 alias py3='python3'
 alias py2='python2'
 alias pip-local-install='pip install --user'
 alias pip-install-aliyun='pip install -i https://mirrors.aliyun.com/pypi/simple/ --user '
 alias pip-upgrade='pip install --ignore-install --upgrade'
-
+alias pip3-upgrade='pip3 install --ignore-install --upgrade'
+alias pip3.6-upgrade='pip3.6 install --ignore-install --upgrade'
+alias py3-venv='python3.6 -m venv'
 alias jupyter-start='jupyter notebook --port=8888 --ip 0.0.0.0 --no-browser'
 alias jupyter-start-root='jupyter notebook --port=8888 --ip 0.0.0.0 --no-browser --allow-root'
