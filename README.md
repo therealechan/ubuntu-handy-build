@@ -11,10 +11,11 @@
 ### install `oh-my-zsh`
 
 ```
-sudo apt-get install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sed -i 's/ZSH_THEME="sammy"/ZSH_THEME="ys"/' ~/.zshrc
-sudo chsh -s /bin/zsh
+sudo apt-get install -y zsh
+
+# config zsh and update theme to 'ys'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/' ~/.zshrc
 ```
 
 ### tmux conf
@@ -56,6 +57,18 @@ echo "
 # load custom bash alias and configure for current user
 if [ -f ~/.py-alias ]; then
     source ~/.py-alias
+fi
+" >> ~/.zshrc
+```
+
+### docker alias
+```
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/docker-alias -o ~/.docker-alias
+
+echo "
+# load custom bash alias and configure for current user
+if [ -f ~/.docker-alias ]; then
+    source ~/.docker-alias
 fi
 " >> ~/.zshrc
 ```

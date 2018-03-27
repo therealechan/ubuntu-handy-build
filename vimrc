@@ -58,15 +58,6 @@ let g:auto_save = 1
 
 """"""""""""""""""""""""""""""""""""""""
 "
-"             pathogen
-"
-""""""""""""""""""""""""""""""""""""""""
-
-  " doorkeeper of all my vim plugins
-  call pathogen#infect()
-
-""""""""""""""""""""""""""""""""""""""""
-"
 "             ack
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -136,7 +127,7 @@ let g:auto_save = 1
 "
 """"""""""""""""""""""""""""""""""""""""
 
-  set hidden "in order to switch between buffers with unsaved change 
+  set hidden "in order to switch between buffers with unsaved change
   map <s-tab> :bp<cr>
   map <tab> :bn<cr>
   map ,bd :bd<cr>

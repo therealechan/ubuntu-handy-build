@@ -1,0 +1,5 @@
+# docker alias
+
+alias dk-ps='docker ps'
+alias dk-rmi='docker rmi'
+alias dk-rm-all-cotainer="docker ps -a | awk '{print $1}' | grep -v CONTAINER | xargs docker rm"

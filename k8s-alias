@@ -1,6 +1,4 @@
-### docker/k8s alias
-
-alias docker-rm-all-cotainer="docker ps -a | awk '{print $1}' | grep -v CONTAINER | xargs docker rm"
+# k8s alias
 
 # 执行 eval $(minikube docker-env)，即设置 minikube 虚拟机的 docker 环境变量即可。
 alias eval-minikube-docker-env='eval $(minikube docker-env)'
