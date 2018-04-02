@@ -23,7 +23,7 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/' ~/.zshrc
 install latest tmux
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux_latest_install.sh)"`
 
-load custom bash alias and configure for current user
+load custom bash alias
 `curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf -o ~/.tmux.conf`
 
 ### vim conf
@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/mas
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/git-alias -o ~/.git-alias
 
 echo "
-# load custom bash alias and configure for current user
+# load custom git alias
 if [ -f ~/.git-alias ]; then
     source ~/.git-alias
 fi
@@ -54,7 +54,7 @@ fi
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/py-alias -o ~/.py-alias
 
 echo "
-# load custom bash alias and configure for current user
+# load custom py alias
 if [ -f ~/.py-alias ]; then
     source ~/.py-alias
 fi
@@ -66,7 +66,7 @@ fi
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/docker-alias -o ~/.docker-alias
 
 echo "
-# load custom bash alias and configure for current user
+# load custom docker alias
 if [ -f ~/.docker-alias ]; then
     source ~/.docker-alias
 fi
@@ -79,7 +79,7 @@ fi
 curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/k8s-alias -o ~/.k8s-alias
 
 echo "
-# load custom bash alias and configure for current user
+# load custom k8s alias
 if [ -f ~/.k8s-alias ]; then
     source ~/.k8s-alias
 fi
