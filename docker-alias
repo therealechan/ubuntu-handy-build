@@ -1,32 +1,3 @@
-### docker cmd
-
-docker commit
-
-`docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]`
-
--a :提交的镜像作者；
--c :使用Dockerfile指令来创建镜像；
--m :提交时的说明文字；
--p :在commit时，将容器暂停。
-
-```
-$ docker images mxnet-cu90/python:1.2.0-roialign
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-mxnet-cu90/python   1.2.0-roialign      ff82b60fdcd1        4 days ago          5.36GB
-
-$ docker ps | grep mxnet-cu90
-ba77f4f31eae        mxnet-cu90/python:1.2.0-roialign
-
-docker commit -a "lingzhi.me" -m "update python dev" ba77f4f31eae mxnet-cu90/python:1.2.0-roialign
-
-docker images mxnet-cu90/python:1.2.0-roialign
-$ docker images mxnet-cu90/python:1.2.0-roialign
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-mxnet-cu90/python   1.2.0-roialign      dce634b0c63f        15 seconds ago      5.38GB
-```
-
-docker commit -a "lingzhi.me" -m "update python dev" fee72e669051 mxnet/python:1.2.0-roialign
-
 # docker alias
 
 alias dk-ps='docker ps'
