@@ -1,6 +1,8 @@
 # docker alias
 
+alias dk-img='docker images'
 alias dk-ps='docker ps'
+alias dk-stop='docker stop'
 alias dk-rmi='docker rmi'
 alias dk-image-prune='docker image prune'
 alias dk-container-prune='docker container prune'
