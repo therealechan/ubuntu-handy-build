@@ -6,22 +6,27 @@
                                               //
 ```
 
-# Basic Config On Ubuntu 16.04 #
+# Basic Config On Ubuntu 18.04 #
 
 ### install `oh-my-zsh`
 
 ```
 sudo apt-get install -y zsh
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # config zsh and update theme to 'ys'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/' ~/.zshrc
 ```
 
 ### tmux conf
 
-install latest tmux
+install latest tmux (ubuntu 16.04):
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux_latest_install.sh)"`
+
+apt-get install latest tmux(ubuntu 18.04):
+`sudo apt install tmux`
 
 load custom bash alias
 `curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/tmux.conf -o ~/.tmux.conf`
