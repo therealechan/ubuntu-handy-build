@@ -11,6 +11,8 @@ alias pip3.6-local-install='pip3.6 install --user'
 alias pip-install-aliyun='pip install -i https://mirrors.aliyun.com/pypi/simple/ --user '
 alias pip3-install-aliyun='pip3 install -i https://mirrors.aliyun.com/pypi/simple/ --user '
 alias pip3.6-install-aliyun='pip3.6 install -i https://mirrors.aliyun.com/pypi/simple/ --user '
+alias pip3.6-install-aliyun-global='pip3.6 install -i https://mirrors.aliyun.com/pypi/simple/'
+
 
 alias pip-upgrade='pip install --ignore-install --upgrade'
 alias pip3-upgrade='pip3 install --ignore-install --upgrade'
