@@ -90,3 +90,16 @@ if [ -f ~/.k8s-alias ]; then
 fi
 " >> ~/.zshrc
 ```
+
+### proxy alias
+
+```
+curl -fsSL https://raw.githubusercontent.com/lexuszhi1990/ubuntu-handy-build/master/proxy.sh -o ~/.proxy-alias
+
+echo "
+# load custom proxy alias
+if [ -f ~/.proxy-alias ]; then
+    source ~/.proxy-alias
+fi
+" >> ~/.zshrc
+```
