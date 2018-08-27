@@ -6,7 +6,18 @@
                                               //
 ```
 
-# Basic Config On Ubuntu 18.04 #
+# Basic Config On Ubuntu 18.04 & 16.04 #
+
+### install all versions
+
+install all plugins( zsh tmux vim py docker ) :
+
+`bash omni-install.sh`
+
+### install docker nvidia cuda (ubuntu 1604)
+
+`sudo bash docker_nvidia_cuda_install_ubuntu_1604.sh`
+
 
 ### install `oh-my-zsh`
 
