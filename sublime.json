@@ -1,0 +1,51 @@
+{
+    "color_scheme": "Packages/Color Scheme - Default/Mariana.tmTheme",
+    "detect_indentation": true,
+    "dictionary": "Packages/Language - English/en_US.dic",
+    "draw_white_space": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "expand_tabs_on_save": true,
+    "file_exclude_patterns":
+    [
+        ".DS_Store",
+        "*.pid",
+        "*.pyc"
+    ],
+    "find_selected_text": true,
+    "fold_buttons": true,
+    "folder_exclude_patterns":
+    [
+        ".git",
+        "__pycache__",
+        "env",
+        "env3"
+    ],
+    "font_size": 23.0,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "ASP",
+        "C#",
+        "ERB Snippets",
+        "Github Tools",
+        "SublimeCodeIntel",
+        "SublimeLinter",
+        "Vintage"
+    ],
+    "line_padding_bottom": 0,
+    "line_padding_top": 0,
+    "scroll_past_end": false,
+    "shift_tab_unindent": true,
+    "show_encoding": true,
+    "show_full_path": true,
+    "show_minimap": false,
+    "spell_check": true,
+    "tab_size": 4,
+    "theme": "Default.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "wide_caret": true,
+    "word_wrap": true,
+    "wrap_width": 0
+}
