@@ -1,29 +1,39 @@
 # k8s alias
 
-# 执行 eval $(minikube docker-env)，即设置 minikube 虚拟机的 docker 环境变量即可。
-alias eval-minikube-docker-env='eval $(minikube docker-env)'
-
 alias kube-restart='sudo systemctl restart kubelet.service'
 alias kube-status='sudo systemctl status kubelet.service'
 alias kube-restart='sudo systemctl restart kubelet.service'
 
-alias kube-get-no='kubectl get nodes'
-alias kube-get-no-sys='kubectl get nodes -n kube-system'
-alias kube-get-no-all='kubectl get nodes --all-namespaces'
-alias kube-get-svc='kubectl get svc'
-alias kube-get-svc-sys='kubectl get svc -n kube-system'
-alias kube-get-svc-all='kubectl get svc --all-namespaces'
+# kube get
+alias kube-get='kubectl get'
+alias kube-get-sys='kubectl get -n kube-system'
+alias kube-get-all='kubectl get --all-namespaces'
+alias kube-get-node='kube-get nodes'
+alias kube-get-pod='kube-get pod'
+alias kube-get-sys-pod='kube-get-sys pod'
+alias kube-get-all-pod='kube-get-all pod'
+alias kube-get-svc='kube-get svc'
+alias kube-get-sys-svc='kube-get-sys svc'
+alias kube-get-all-svc='kube-get-all svc'
+alias kube-get-deploy='kube-get deploy'
+alias kube-get-sys-deploy='kube-get-sys deploy'
+alias kube-get-all-deploy='kube-get-all deploy'
+alias kube-get-ep='kube-get endpoints'
+alias kube-get-sys-ep='kube-get-sys endpoints'
+alias kube-get-all-ep='kube-get-all endpoints'
 
-alias kube-get-deploy='kubectl get deployments'
-alias kube-get-ep='kubectl get endpoints'
-alias kube-get-ns='kubectl get namespaces'
-alias kube-get-sc='kubectl get sc'
-alias kube-get-sts='kubectl get sts'
-
+# kube desc
 alias kube-desc='kubectl describe'
-alias kube-desc-pod='kubectl describe pod'
-alias kube-desc-sys='kubectl describe --namespace=kube-system'
+alias kube-desc-sys='kubectl describe -n kube-system'
+alias kube-desc-all='kubectl describe --all-namespaces'
+alias kube-desc-pod='kube-desc pod'
+alias kube-desc-sys-pod='kube-desc-sys pod'
+alias kube-desc-all-pod='kube-desc-all pod'
+alias kube-desc-svc='kube-desc svc'
+alias kube-desc-sys-svc='kube-desc-sys svc'
+alias kube-desc-all-svc='kube-desc-all svc'
 
+# kube CRUD
 alias kube-exec='kubectl exec -it'
 alias kube-create-file='kubectl create -f'
 alias kube-del-file='kubectl delete -f'
