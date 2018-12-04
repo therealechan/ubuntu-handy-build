@@ -6,7 +6,7 @@ sudo tee /etc/shadowsocks/config.json <<EOF
     "server": "server_addr",
     "server_port": server_port,
     "local_address": "127.0.0.1",
-    "local_port": local_port,
+    "local_port": 1080,
     "password": "your-passwd",
     "method": "rc4-md5",
     "fast_open": true,
@@ -21,8 +21,8 @@ sudo tee /etc/polipo/config<<EOF
 logSyslog = true
 logFile = /var/log/polipo/polipo.log
 proxyAddress = "127.0.0.1"
-proxyPort = proxyPort
-socksParentProxy = "127.0.0.1:local_port"
+proxyPort = 2080
+socksParentProxy = "127.0.0.1:1080"
 socksProxyType = socks5
 EOF
 
