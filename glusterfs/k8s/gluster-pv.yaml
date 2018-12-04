@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gfs-dataset-gv0
+  namespace: training
+spec:
+  capacity:
+    storage: 1800Gi
+  accessModes:
+    - ReadWriteMany
+  glusterfs:
+    endpoints: gfs-dataset
+    path: gv0
+    readOnly: false
+  persistentVolumeReclaimPolicy: Retain
